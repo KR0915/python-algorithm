@@ -1,9 +1,8 @@
-a=int(input())
-b=int(input())
-
-result=a*b
-
-if result%2==0:
-    print("Even")
-else:
-    print("Odd")
+N=int(input())
+A=list(map(int,input().split()))
+result=[]
+for i in range(N):
+    for n in range(i):
+        result.append(A[i]-A[n])
+result.sort()
+print(result[-1])
