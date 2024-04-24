@@ -1,7 +1,7 @@
-for i in range(1,10001):
+for i in range(1,100):
     ans=True
     for n in range(2,i):
         if i%n==0:
-            break
-    else:
-        print(i)    
+            ans=False
+    if ans:
+        print(i)
