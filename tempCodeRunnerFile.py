@@ -1,20 +1,18 @@
-def can_convert(S):
-    while S:
-        if S.endswith("dream"):
-            S = S[:-5]
-        elif S.endswith("dreamer"):
-            S = S[:-7]
-        elif S.endswith("erase"):
-            S = S[:-5]
-        elif S.endswith("eraser"):
-            S = S[:-6]
+S=input()
+flag1=False
+flag2=False
+flag3=False
+if S[0]=="<":
+    flag1=True
+    for i in range(1,len(S)-1):
+        if S[i]!="=":
+            break
         else:
-            return False
-    return True
-
-
-S = input()
-if can_convert(S):
-    print("Yes")
+            flag2=True
+    if S[-1]==">":
+        flag3=True
+        
+if flag1 and flag2 and flag3:
+    print("YES")
 else:
-    print("No")
+    print("NO")
