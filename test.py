@@ -1,18 +1,15 @@
-N=int(input())
-A=list(map(int,input().split()))
-result=[]
-for i in range(N):
-    M=2**int(A[i])
-    result.append(M)
+s=input()
+
+ans=[]
+for i in range(len(s)):
+    count=0
+    for j in range(len(s)):
+        if s[i]==s[j]:
+            count+=1
+    ans.append(count)
+ans.sort()
+print(ans)
+
+for i in ans:
     
-    if len(result) > 1 and result[-1] == result[-2]:
-        while len(result) > 1 and result[-1] == result[-2]:
-            new = result[-1] + result[-2]
-            result.pop()
-            result.pop()
-            result.append(new)
-    elif result[-1]!=result[-2]:
-        break
-    
-    
-print(len(result))
+
