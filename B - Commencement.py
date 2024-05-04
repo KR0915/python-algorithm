@@ -1,15 +1,9 @@
-s=input()
-result={}
-for i in s:
-    for i in result:
-        result[i]+=1
-    else:
-        result[i]=1
-d=list(result.values())
+from collections import Counter
 
-for j in d:
-    if not (d.count(j)in(0,2)):
-        print('No')
-        break
+s=input()
+c=Counter(s)
+d=Counter(c.values())
+if set(d.values())==set([2]):
+    print("Yes")
 else:
-    print('Yes')
+    print("No")

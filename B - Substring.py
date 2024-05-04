@@ -1,8 +1,10 @@
 S=input()
 ans=0
-for i in range(len(S)):
-    get=set()
-    for j in range(len(S)-i):
-        get.add(S[i:j])
-    ans+=len(get)
-print(ans)
+get=[]
+for i in range(len(S)+1):
+    for j in range(i+1,len(S)+1):
+        get.append(S[i:j])
+
+
+ans=set(get)
+print(len(ans))

@@ -1,15 +1,3 @@
-s=input()
-
-ans=[]
-for i in range(len(s)):
-    count=0
-    for j in range(len(s)):
-        if s[i]==s[j]:
-            count+=1
-    ans.append(count)
-ans.sort()
-print(ans)
-
-for i in ans:
-    
-
+a=[1,2,3]
+if a[-1]==3:
+    print("a")
