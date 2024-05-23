@@ -1,12 +1,11 @@
 N,M=map(int,input().split())
 S=input()
 T=input()
-
-if S[:N]==T[:N] and S[M:]==T[M:]:
+if S==T[:N] and S==T[-N:]:
     print(0)
-elif S[N:]==T[N:]:
-    print(2)
-elif S[:N]==T[:N]:
+elif S==T[:N]:
     print(1)
+elif S==T[-N:]:
+    print(2)
 else:
     print(3)
