@@ -1,7 +1,5 @@
 A,M,L,R=map(int,input().split())
-r=((R-A)//M)*M+A
-print(r)
-l=((L+A)//M)*M+A
-print(l)
+l=L+(A-L)%M
+r=R-(R-A)%M
 print((r-l)//M+1)
     
