@@ -1,1 +1,2 @@
-print(N)
+
+    row[x]+=1
