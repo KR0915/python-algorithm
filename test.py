@@ -1,2 +1,2 @@
-import math
-print(math.ceil(10//12)+1)
+a=[1,2,3,4,5]
+print(a[:2])
