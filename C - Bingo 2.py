@@ -1,16 +1,21 @@
 N,T=map(int,input().split())
-A=list(map(lambda x:int(x),input().split()))
-
-row=[0]*N
-col=[0]*N
-diag=[0]*2
+A=list(map(int,input().split()))
+tate=[0]*N
+yoko=[0]*N
+naname1=0
+naname2=0
+ans=-1
 
 for i in range(T):
-    x=A[i]//N
-    y=A[i]%N
-    
-    row[x]+=1
-    print(row[x])
-    if row[x]==N:
-        print(i+1)
-        exit()
+    t,y=(A[i]-1)//N,(A[i]-1)%N
+    tate[t]+=1
+    yoko[y]+=1
+    if t==y:
+        naname1+=1
+    if t+y==N-1:
+        naname2+=1
+    if tate[t]==N or yoko[y]==N or naname1==N or naname2==N:
+        ans=i+1
+        break
+
+print(ans)
