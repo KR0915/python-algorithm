@@ -1,5 +1,8 @@
-S,T=map(str,input().split())
-if (S=='AtCoder') and (T=='Land'):
-    print('Yes')
+A,B=map(int,input().split())
+i=0
+if B==1:
+    i=0
 else:
-    print('No')
+    while ((A*i)-(i-1))<B:
+        i+=1
+print(i)
