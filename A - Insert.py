@@ -1,0 +1,5 @@
+N,K,X=map(int,input().split())
+A=list(map(int,input().split()))
+A.insert(K,X)
+B=' '.join(map(str,A))
+print(B)
