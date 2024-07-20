@@ -1,15 +1,17 @@
-N,K=map(int,input().split())
-A=list(map(int,input().split()))
-
-A.sort()
+import math
+x=[]
+y=[]
+prot=[]
+for _ in range(3):
+    A,B=map(int,input().split())
+    x.append(A)
+    y.append(B)
     
-min_diff = float('inf')
+AB=math.sqrt((x[1]-x[0])**2+(y[1]-y[0])**2)
+BC=math.sqrt((x[2]-x[1])**2+(y[2]-y[1])**2) 
+CA=math.sqrt((x[0]-x[2])**2+(y[0]-y[2])**2)
 
-for start in range(K + 1):
-    end = N - (K - start)
-    if end <= N:
-        current_min = A[start]
-        current_max = A[end - 1]
-        min_diff = min(min_diff, current_max - current_min)
-        
-print(min_diff)
+if AB**2+BC**2==CA**2 or BC**2+CA**2==AB**2 or CA**2+AB**2==BC**2:
+    print("Yes")
+else:
+    print("No")
