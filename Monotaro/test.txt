@@ -1,1 +1,0 @@
--rwx rx --x mik mik 1858　May　1 16:29 abc
