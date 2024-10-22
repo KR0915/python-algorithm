@@ -1,0 +1,20 @@
+N=int(input())
+A=list(map(int,input().split()))
+B=list(map(int,input().split()))
+A.sort(reverse=True)
+B.sort(reverse=True)
+flg=1
+ans=-1
+for i in range(N):
+    if(flg):
+        if(i==N-1):
+            ans=A[i]
+        else:
+            if(A[i]>B[i]):
+                ans=A[i]
+                flg=0
+    else:
+        if(A[i]>B[i-1]):
+            ans=-1
+            break
+print(ans)
