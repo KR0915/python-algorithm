@@ -1,27 +1,20 @@
-from collections import defaultdict
-import heapq
+from queue import deque
 
 Q = int(input())
 
-plants = defaultdict(int)
-heights = []
+que = deque()
+current_time = 0
 
-for _ in range(Q):
+for i in range(Q):
     query = input().split()
     if query[0] == '1':
-        plants[0] += 1
-        heapq.heappush(heights, 0)
+        que.append(current_time)
     elif query[0] == '2':
-        height = int(query[1])
-        if plants[0] > 0:
-            plants[height] += plants[0]
-            plants[0] = 0
-            heapq.heappush(heights, height)
-    elif query[0] == '3':
-        height = int(query[1])
+        current_time += int(query[1])
+    else:
+        H = int(query[1])
         count = 0
-        for h in list(plants.keys()):
-            if h >= height:
-                count += plants[h]
-                plants[h] = 0
+        while que and current_time - que[0] >= H:
+            que.popleft()
+            count += 1
         print(count)
